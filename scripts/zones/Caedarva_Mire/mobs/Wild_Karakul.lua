@@ -8,5 +8,8 @@ require("scripts/globals/mobs")
 -----------------------------------
 
 function onMobDeath(mob, player, isKiller)
+end
+
+function onMobDespawn(mob)
     phOnDespawn(mob, ID.mob.PEALLAIDH_PH, 5, 3600) -- 1 hour
 end
