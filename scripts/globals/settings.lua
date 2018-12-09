@@ -16,8 +16,8 @@
 require("scripts/globals/common");
 
 -- Enable Expansion (1= yes 0= no)
-ENABLE_COP     = 0;
-ENABLE_TOAU    = 0;
+ENABLE_COP     = 1;
+ENABLE_TOAU    = 1;
 ENABLE_WOTG    = 0;
 ENABLE_ACP     = 0;
 ENABLE_AMK     = 0;
@@ -45,18 +45,18 @@ INITIAL_LEVEL_CAP = 50; -- The initial level cap for new players.  There seems t
 MAX_LEVEL = 75; -- Level max of the server, lowers the attainable cap by disabling Limit Break quests.
 NORMAL_MOB_MAX_LEVEL_RANGE_MIN = 81; -- Lower Bound of Max Level Range for Normal Mobs (0 = Uncapped)
 NORMAL_MOB_MAX_LEVEL_RANGE_MAX = 84; -- Upper Bound of Max Level Range for Normal Mobs (0 = Uncapped)
-START_GIL = 10; -- Amount of gil given to newly created characters.
-START_INVENTORY = 30; -- Starting inventory and satchel size.  Ignores values < 30.  Do not set above 80!
+START_GIL = 80000; -- Amount of gil given to newly created characters.
+START_INVENTORY = 80; -- Starting inventory and satchel size.  Ignores values < 30.  Do not set above 80!
 OPENING_CUTSCENE_ENABLE = 0; -- Set to 1 to enable opening cutscenes, 0 to disable.
 SUBJOB_QUEST_LEVEL = 18; -- Minimum level to accept either subjob quest.  Set to 0 to start the game with subjobs unlocked.
 ADVANCED_JOB_LEVEL = 30; -- Minimum level to accept advanced job quests.  Set to 0 to start the game with advanced jobs.
-ALL_MAPS = 0; -- Set to 1 to give starting characters all the maps.
-UNLOCK_OUTPOST_WARPS = 0; -- Set to 1 to give starting characters all outpost warps.  2 to add Tu'Lia and Tavnazia.
+ALL_MAPS = 1; -- Set to 1 to give starting characters all the maps.
+UNLOCK_OUTPOST_WARPS = 1; -- Set to 1 to give starting characters all outpost warps.  2 to add Tu'Lia and Tavnazia.
 
 SHOP_PRICE      = 1.000; -- Multiplies prices in NPC shops.
-GIL_RATE        = 1.000; -- Multiplies gil earned from quests.  Won't always display in game.
+GIL_RATE        = 5.000; -- Multiplies gil earned from quests.  Won't always display in game.
 BAYLD_RATE      = 1.000; -- Multiples bayld earned from quests.
-EXP_RATE        = 1.000; -- Multiplies exp earned from fov and quests.
+EXP_RATE        = 3.000; -- Multiplies exp earned from fov and quests.
 TABS_RATE       = 1.000; -- Multiplies tabs earned from fov.
 CURE_POWER      = 1.000; -- Multiplies amount healed from Healing Magic, including the relevant Blue Magic.
 ELEMENTAL_POWER = 1.000; -- Multiplies damage dealt by Elemental and non-drain Dark Magic.
@@ -64,7 +64,7 @@ DIVINE_POWER    = 1.000; -- Multiplies damage dealt by Divine Magic.
 NINJUTSU_POWER  = 1.000; -- Multiplies damage dealt by Ninjutsu Magic.
 BLUE_POWER      = 1.000; -- Multiplies damage dealt by Blue Magic.
 DARK_POWER      = 1.000; -- Multiplies amount drained by Dark Magic.
-ITEM_POWER      = 1.000; -- Multiplies the effect of items such as Potions and Ethers.
+ITEM_POWER      = 1.500; -- Multiplies the effect of items such as Potions and Ethers.
 WEAPON_SKILL_POWER  = 1.000; -- Multiplies damage dealt by Weapon Skills.
 WEAPON_SKILL_POINTS = 1.000; -- Multiplies points earned during weapon unlocking.
 USE_ADOULIN_WEAPON_SKILL_CHANGES = false; -- true/false. Change to toggle new Adoulin weapon skill damage calculations
@@ -79,7 +79,7 @@ LOGGING_RATE            = 50; -- % chance to recieve an item from logging.  Set 
 MINING_RATE             = 50; -- % chance to recieve an item from mining.  Set between 0 and 100.
 DIGGING_RATE            = 85; -- % chance to receive an item from chocbo digging during favorable weather.  Set between 0 and 100.
 
-HEALING_TP_CHANGE       = -100; -- Change in TP for each healing tick. Default is -100
+HEALING_TP_CHANGE       = -0; -- Change in TP for each healing tick. Default is -100
 
 -- SE implemented coffer/chest illusion time in order to prevent coffer farming. No-one in the same area can open a chest or coffer for loot (gil, gems & items)
 -- till a random time between MIN_ILLSION_TIME and MAX_ILLUSION_TIME. During this time players can loot keyitem and item related to quests (AF, maps... etc.)
@@ -90,11 +90,11 @@ CHEST_MIN_ILLUSION_TIME  = 1800;  -- 30 minutes
 
 -- Sets spawn type for: Behemoth, Fafnir, Adamantoise, King Behemoth, Nidhog, Aspidochelone.
 -- Use 0 for timed spawns, 1 for force pop only, 2 for both
-LandKingSystem_NQ = 0;
-LandKingSystem_HQ = 0;
+LandKingSystem_NQ = 2;
+LandKingSystem_HQ = 2;
 
 -- DYNAMIS SETTINGS
-    BETWEEN_2DYNA_WAIT_TIME = 24;       -- Hours before player can renter Dynamis. Default is 1 Earthday (24 hours).
+    BETWEEN_2DYNA_WAIT_TIME = 12;       -- Hours before player can renter Dynamis. Default is 1 Earthday (24 hours).
         DYNA_MIDNIGHT_RESET = true;     -- if true, makes the wait time count by number of server midnights instead of full 24 hour intervals
              DYNA_LEVEL_MIN = 65;       -- level min for entering in Dynamis
     TIMELESS_HOURGLASS_COST = 500000;   -- refund for the timeless hourglass for Dynamis.
@@ -131,7 +131,7 @@ USE_OLD_MAGIC_DAMAGE = false; -- true/false. if true, uses older magic damage fo
 
 -- CELEBRATIONS
 EXPLORER_MOOGLE = 1; -- Enables Explorer Moogle teleports
-EXPLORER_MOOGLE_LEVELCAP = 10;
+EXPLORER_MOOGLE_LEVELCAP = 5;
 HALLOWEEN_2005 = 0; -- Set to 1 to Enable the 2005 version of Harvest Festival, will start on Oct. 20 and end Nov. 1.
 HALLOWEEN_YEAR_ROUND = 0; -- Set to 1 to have Harvest Festival initialize outside of normal times.
 
@@ -139,12 +139,12 @@ HALLOWEEN_YEAR_ROUND = 0; -- Set to 1 to have Harvest Festival initialize outsid
 HOMEPOINT_HEAL = 0; --Set to 1 if you want Home Points to heal you like in single-player Final Fantasy games.
 RIVERNE_PORTERS = 120; -- Time in seconds that Unstable Displacements in Cape Riverne stay open after trading a scale.
 LANTERNS_STAY_LIT = 1200; -- time in seconds that lanterns in the Den of Rancor stay lit.
-ENABLE_COP_ZONE_CAP = 1; -- enable or disable lvl cap
+ENABLE_COP_ZONE_CAP=1; -- enable or disable lvl cap
 TIMEZONE_OFFSET = 9.0; -- Offset from UTC used to determine when "JP Midnight" is for the server.  Default is JST (+9.0).
 ALLOW_MULTIPLE_EXP_RINGS = 0; -- Set to 1 to remove ownership restrictions on the Chariot/Empress/Emperor Band trio.
 BYPASS_EXP_RING_ONE_PER_WEEK = 0; -- -- Set to 1 to bypass the limit of one ring per Conquest Tally Week.
 NUMBER_OF_DM_EARRINGS = 1; -- Number of earrings players can simultaneously own from Divine Might before scripts start blocking them (Default: 1)
-HOMEPOINT_TELEPORT = 0; -- Enables the homepoint teleport system
+HOMEPOINT_TELEPORT = 1; -- Enables the homepoint teleport system
 DIG_ABUNDANCE_BONUS = 0; -- Increase chance of digging up an item (450  = item digup chance +45)
 DIG_FATIGUE = 1; -- Set to 0 to disable Dig Fatigue
 DIG_GRANT_BURROW = 0; -- Set to 1 to grant burrow ability
